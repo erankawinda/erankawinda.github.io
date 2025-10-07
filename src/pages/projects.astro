@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Projects">
+  <article class="prose dark:prose-invert">
+    <h1>Projects</h1>
+
+    <h3>Investor Assistant RAG</h3>
+    <ul>
+      <li>Fast, provenance-aware answers for ASX companies.</li>
+      <li>Stack: Python embeddings, RAG eval (ROUGE/BERTScore/NDCG), Streamlit.</li>
+      <li><a href="https://github.com/rmit-ds-investor-assistant" target="_blank">GitHub org</a></li>
+    </ul>
+
+    <h3>GridAI — AI Impact on the Australian Electricity Grid</h3>
+    <ul>
+      <li>Datasets: AEMO Dispatch SCADA (5-min), Operational Demand (30-min).</li>
+      <li>Models: RF/XGBoost; time-aware CV; reproducible pipelines.</li>
+    </ul>
+
+    <h3>UBT / Private Retrieval (ZK)</h3>
+    <ul>
+      <li>Exploring Ethereum UBT and PIR protocols for private queries at scale.</li>
+      <li>Focus: proofs of innocence, subtree structures, BLAKE3 hashing.</li>
+    </ul>
+  </article>
+</BaseLayout>

@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Eran Dodampe Gamage — Portfolio";
+const description = "Physicist → Data Scientist. RAG, NLP, Energy Analytics, ZK.";
 ---
+<BaseLayout {title} {description}>
+  <section class="space-y-6">
+    <h1 class="text-3xl md:text-4xl font-bold">Hi, I’m Eran 👋</h1>
+    <p class="text-lg leading-relaxed">
+      I build practical AI tools and research RAG evaluation, grid analytics (AEMO/NEM), and privacy-preserving protocols.
+    </p>
 
-<Layout>
-	<Welcome />
-</Layout>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/projects" class="rounded-2xl border p-5 hover:shadow">
+        <h2 class="font-semibold mb-2">Featured Projects</h2>
+        <p>Investor Assistant RAG, GridAI (AEMO), UBT/PIR exploration.</p>
+      </a>
+      <a href="/blog" class="rounded-2xl border p-5 hover:shadow">
+        <h2 class="font-semibold mb-2">Notes & Blog</h2>
+        <p>Short writeups on RAG metrics and energy analytics.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

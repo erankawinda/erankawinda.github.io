@@ -1,0 +1,35 @@
+---
+const {
+  title = "Eran Dodampe Gamage",
+  description = "Data Science • RAG • Energy Analytics • ZK Research"
+} = Astro.props;
+import "../styles/global.css";
+---
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
+    <header class="border-b border-gray-200 dark:border-gray-800">
+      <nav class="mx-auto max-w-3xl px-4 py-4 flex items-center justify-between">
+        <a href="/" class="font-semibold">Eran</a>
+        <div class="space-x-5 text-sm">
+          <a href="/projects" class="hover:underline">Projects</a>
+          <a href="/blog" class="hover:underline">Blog</a>
+          <a href="/about" class="hover:underline">About</a>
+          <a href="/contact" class="hover:underline">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <slot />
+    </main>
+    <footer class="mx-auto max-w-3xl px-4 py-10 text-sm text-gray-500">
+      © {new Date().getFullYear()} Eran Dodampe Gamage · Built with Astro + Tailwind
+    </footer>
+  </body>
+</html>
