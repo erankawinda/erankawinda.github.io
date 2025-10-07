@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+/* color system (dark-first) */
+:root {
+  --bg: #0b1220;           /* deep slate/navy */
+  --panel: #0f172a;        /* slate-900 */
+  --text: #e5e7eb;         /* gray-200 */
+  --muted: #9aa4b2;        /* slate-400 */
+  --accent: #60a5fa;       /* blue-400 */
+  --accent-2: #22d3ee;     /* cyan-400 */
+  --ring: rgba(96,165,250,.35);
+}
+
+/* app background with subtle gradient + noise */
+html, body {
+  height: 100%;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.15), transparent 60%),
+    radial-gradient(1000px 800px at 90% 0%, rgba(96,165,250,.18), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* reusable bits */
+.container-nice { @apply mx-auto w-full max-w-5xl px-5; }
+.card {
+  @apply rounded-2xl border border-white/10 bg-slate-900/50 p-6 shadow-sm backdrop-blur;
+}
+.card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.25); border-color: rgba(255,255,255,.18); }
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium transition;
+}
+.btn-primary { @apply bg-blue-600 text-white hover:bg-blue-500; box-shadow: 0 8px 24px rgba(37,99,235,.35); }
+.btn-ghost   { @apply border border-white/15 text-white hover:bg-white/10; }
+
+/* simple enter animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px) } to { opacity:1; transform:none } }
+.fade-up { animation: fadeUp .6s ease-out both; }
+
+/* typography tweaks */
+.prose-ish h1 { @apply text-4xl md:text-5xl font-semibold tracking-tight; }
+.prose-ish p  { @apply text-slate-300 leading-relaxed; }
+.link {
+  color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .2em;
+}
+.link:hover { color: var(--accent-2); }

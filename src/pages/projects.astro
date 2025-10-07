@@ -1,27 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Projects">
-  <article class="prose dark:prose-invert">
-    <h1>Projects</h1>
+<BaseLayout title="Projects — Eran Gamage">
+  <h1 class="text-3xl font-semibold mb-8">Projects</h1>
 
-    <h3>Investor Assistant RAG</h3>
-    <ul>
-      <li>Fast, provenance-aware answers for ASX companies.</li>
-      <li>Stack: Python embeddings, RAG eval (ROUGE/BERTScore/NDCG), Streamlit.</li>
-      <li><a href="https://github.com/rmit-ds-investor-assistant" target="_blank">GitHub org</a></li>
-    </ul>
+  <div class="grid gap-6 md:grid-cols-2">
+    <article class="card">
+      <h2 class="text-xl font-semibold">Investor Assistant RAG</h2>
+      <p class="mt-2 text-slate-300">Fast, provenance-aware answers for ASX companies.</p>
+      <ul class="mt-3 list-disc pl-5 text-slate-300">
+        <li>Stack: Python embeddings, RAG eval (ROUGE/BERTScore/NDCG), Streamlit</li>
+        <li><a class="link" href="https://github.com/rmit-ds-investor-assistant" target="_blank">GitHub org</a></li>
+      </ul>
+    </article>
 
-    <h3>GridAI — AI Impact on the Australian Electricity Grid</h3>
-    <ul>
-      <li>Datasets: AEMO Dispatch SCADA (5-min), Operational Demand (30-min).</li>
-      <li>Models: RF/XGBoost; time-aware CV; reproducible pipelines.</li>
-    </ul>
+    <article class="card">
+      <h2 class="text-xl font-semibold">GridAI — AI & the Australian Grid</h2>
+      <p class="mt-2 text-slate-300">Forecasting & analysis on AEMO Dispatch SCADA and demand datasets.</p>
+      <ul class="mt-3 list-disc pl-5 text-slate-300">
+        <li>Models: RF/XGBoost; time-aware CV; reproducible pipelines</li>
+      </ul>
+    </article>
 
-    <h3>UBT / Private Retrieval (ZK)</h3>
-    <ul>
-      <li>Exploring Ethereum UBT and PIR protocols for private queries at scale.</li>
-      <li>Focus: proofs of innocence, subtree structures, BLAKE3 hashing.</li>
-    </ul>
-  </article>
+    <article class="card">
+      <h2 class="text-xl font-semibold">UBT / Private Retrieval (ZK)</h2>
+      <p class="mt-2 text-slate-300">PIR-style private queries, proofs of innocence, subtree structures, BLAKE3.</p>
+    </article>
+
+    <article class="card">
+      <h2 class="text-xl font-semibold">Deep Learning for Drought (Sri Lanka)</h2>
+      <p class="mt-2 text-slate-300">RNN/ANN for SPEI indices; long-term drought prediction.</p>
+    </article>
+  </div>
 </BaseLayout>

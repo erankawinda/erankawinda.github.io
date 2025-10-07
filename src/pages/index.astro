@@ -1,24 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "Eran Dodampe Gamage — Portfolio";
-const description = "Physicist → Data Scientist. RAG, NLP, Energy Analytics, ZK.";
 ---
-<BaseLayout {title} {description}>
-  <section class="space-y-6">
-    <h1 class="text-3xl md:text-4xl font-bold">Hi, I’m Eran 👋</h1>
-    <p class="text-lg leading-relaxed">
-      I build practical AI tools and research RAG evaluation, grid analytics (AEMO/NEM), and privacy-preserving protocols.
+<BaseLayout title="Eran Gamage — AI & Data Science">
+  <!-- HERO -->
+  <section class="fade-up text-center space-y-6">
+    <div class="mx-auto h-28 w-28 rounded-full ring-2 ring-[var(--ring)] bg-[url('/eran-profile.jpg')] bg-cover bg-center"></div>
+    <h1 class="prose-ish h1">Hi, I’m Eran 👋</h1>
+    <p class="prose-ish max-w-2xl mx-auto">
+      Physicist-turned data scientist. I build practical AI systems—RAG, NLP, and grid analytics (AEMO/NEM)—and explore privacy-preserving protocols (UBT/PIR) in blockchain.
     </p>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <a href="/projects" class="rounded-2xl border p-5 hover:shadow">
-        <h2 class="font-semibold mb-2">Featured Projects</h2>
-        <p>Investor Assistant RAG, GridAI (AEMO), UBT/PIR exploration.</p>
-      </a>
-      <a href="/blog" class="rounded-2xl border p-5 hover:shadow">
-        <h2 class="font-semibold mb-2">Notes & Blog</h2>
-        <p>Short writeups on RAG metrics and energy analytics.</p>
-      </a>
+    <div class="flex flex-wrap justify-center gap-3 pt-2">
+      <a class="btn btn-primary" href="/Eran_Dodampe_Gamage_CV.pdf">Download CV</a>
+      <a class="btn btn-ghost" href="/projects">View Projects</a>
     </div>
+  </section>
+
+  <!-- FEATURE CARDS -->
+  <section class="mt-12 grid gap-6 md:grid-cols-2">
+    <a href="/projects" class="card">
+      <h3 class="mb-2 text-lg font-semibold">Featured Projects</h3>
+      <p class="text-slate-300">Investor Assistant RAG, GridAI (AEMO), UBT/PIR exploration.</p>
+    </a>
+    <a href="/blog" class="card">
+      <h3 class="mb-2 text-lg font-semibold">Notes & Blog</h3>
+      <p class="text-slate-300">Short writeups on RAG evaluation and energy analytics.</p>
+    </a>
   </section>
 </BaseLayout>
