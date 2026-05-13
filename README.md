@@ -1,52 +1,22 @@
-# Eran Gamage Portfolio
+# erankawinda.github.io
 
-Personal portfolio website for Eran Gamage, built with Astro and Tailwind CSS.
+Minimal personal portfolio for Eran Gamage, built with Astro 5 and Tailwind CSS 4.
 
-The site is intentionally minimal: dark background, compact navigation, simple cards, and content focused on applied AI, retrieval systems, NLP evaluation, energy analytics, privacy-preserving retrieval, and climate modelling.
+## Overview
 
-## Stack
+This site presents selected work across practical AI systems, retrieval-augmented generation, Australian energy grid analytics, privacy-preserving retrieval, and climate data science.
+
+The design is intentionally simple: a dark static site, small reusable card components, clean typography, and no dependency on missing public assets.
+
+## Tech stack
 
 - Astro 5
-- Tailwind CSS 4
-- Vite
-- GitHub Pages
+- Tailwind CSS 4 via the Vite Tailwind plugin
+- Static deployment target: GitHub Pages at `https://erankawinda.github.io`
 
-## Project Structure
-
-- `src/layouts/BaseLayout.astro` - shared HTML shell, navigation, footer, and font loading
-- `src/styles/global.css` - Tailwind import, theme variables, reusable classes, and global styles
-- `src/pages/index.astro` - homepage
-- `src/pages/projects.astro` - selected project summaries
-- `src/pages/about.astro` - background and research interests
-- `src/pages/contact.astro` - contact links
-- `src/pages/blog/` - short notes
-
-## Commands
-
-Install dependencies:
+## Local development
 
 ```sh
 npm install
-```
-
-Start the local development server:
-
-```sh
 npm run dev
 ```
-
-Build the static site:
-
-```sh
-npm run build
-```
-
-Preview the production build locally:
-
-```sh
-npm run preview
-```
-
-## Deployment
-
-The Astro config sets the site URL to `https://erankawinda.github.io`. The repository is intended to deploy through GitHub Pages.
