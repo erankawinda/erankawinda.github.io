@@ -1,0 +1,17 @@
+---
+interface Props {
+  date: string;
+  title: string;
+  description: string;
+}
+
+const { date, title, description } = Astro.props;
+---
+
+<article class="grid gap-3 border-t border-[var(--border-soft)] py-6 md:grid-cols-[0.28fr_0.72fr]">
+  <p class="eyebrow">{date}</p>
+  <div>
+    <h2 class="text-xl font-semibold text-[var(--text)]">{title}</h2>
+    <p class="mt-2 leading-7 text-[var(--muted)]">{description}</p>
+  </div>
+</article>

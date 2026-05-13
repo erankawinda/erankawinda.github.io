@@ -1,0 +1,47 @@
+---
+import TagList from "./TagList.astro";
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  compact?: boolean;
+}
+
+const { project, compact = false } = Astro.props;
+---
+
+<article class="project-entry">
+  <div class="project-entry-meta">
+    <p class="eyebrow">{project.category}</p>
+    <p class="mt-3 text-sm leading-6 text-[var(--subtle)]">{project.status}</p>
+  </div>
+
+  <div class="project-entry-body">
+    <h2 class="text-2xl font-semibold tracking-tight text-[var(--text)]">{project.title}</h2>
+    <p class="mt-3 max-w-3xl leading-7 text-[var(--muted)]">{project.summary}</p>
+
+    {!compact && (
+      <div class="mt-6">
+        <p class="mono text-xs uppercase tracking-[0.18em] text-[var(--subtle)]">What the work involved</p>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-[var(--muted)]">
+          {project.details.map((detail) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"></span>
+              <span>{detail}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="mt-6">
+      <TagList tags={project.tags} />
+    </div>
+
+    {project.link && (
+      <a class="link mt-5 inline-flex text-sm font-medium" href={project.link} target="_blank" rel="noreferrer">
+        {project.linkLabel ?? "Project link"}
+      </a>
+    )}
+  </div>
+</article>

@@ -1,20 +1,27 @@
 # erankawinda.github.io
 
-Minimal personal portfolio for Eran Gamage, built with Astro 5 and Tailwind CSS 4.
+Personal research portfolio for Eran Gamage.
 
-## Overview
+Built with Astro 5 and Tailwind CSS 4 for deployment on GitHub Pages.
 
-This site presents selected work across practical AI systems, retrieval-augmented generation, Australian energy grid analytics, privacy-preserving retrieval, and climate data science.
+## Focus
 
-The design is intentionally simple: a dark static site, small reusable card components, clean typography, and no dependency on missing public assets.
+The site presents selected work across:
+
+- retrieval-augmented generation
+- NLP and retrieval evaluation
+- Australian energy-grid analytics
+- privacy-aware retrieval systems
+- climate and drought modelling
+- physics-informed data science interests
 
 ## Tech stack
 
 - Astro 5
-- Tailwind CSS 4 via the Vite Tailwind plugin
-- Static deployment target: GitHub Pages at `https://erankawinda.github.io`
+- Tailwind CSS 4
+- GitHub Pages
 
-## Local development
+## Development
 
 ```sh
 npm install

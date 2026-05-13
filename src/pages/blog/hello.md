@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "A small place for notes"
+title: "Why keep notes?"
 pubDate: 2026-05-13
-description: "A short note on what this blog will cover."
+description: "A short note on writing things down while learning and building."
 ---
-# A small place for notes
+# Why keep notes?
 
-This site is mostly a portfolio, but I want the notes section to be useful in a simple way: short explanations of things I am learning, building, or evaluating.
+Technical work is easier to trust when the reasoning around it is visible.
 
-The themes will likely stay close to my current work: retrieval-augmented generation, NLP evaluation, Australian energy data, privacy-preserving retrieval, and the habits that make technical work easier to trust.
+I want this section to become a small record of ideas I am working through: retrieval evaluation, time-series modelling, energy data, privacy-aware retrieval, and the habits that make research code easier to revisit.
 
-I will keep the writing direct. Fewer claims, more context, and enough detail for someone else to reproduce the idea or question it properly.
+The aim is not to publish frequently. The aim is to write clearly enough that a future reader — including me — can understand the question, the method, and the limits of the result.

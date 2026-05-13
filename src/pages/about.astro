@@ -1,43 +1,126 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TagList from "../components/TagList.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+
+const timeline = [
+  {
+    date: "2024–2026",
+    title: "Master’s in Data Science",
+    description: "RMIT University — Current study focused on machine learning, data systems, analytics, and applied AI."
+  },
+  {
+    date: "2017–2021",
+    title: "BSc Honours in Physics",
+    description: "University of Colombo — Studied physics with supporting foundations in mathematics and computer science."
+  },
+  {
+    date: "2021–2022",
+    title: "Teaching Assistant",
+    description: "University of Colombo — Supported physics teaching and laboratory coursework, including course-material development and student assessment."
+  },
+  {
+    date: "2021",
+    title: "Drought prediction research",
+    description: "University of Colombo — Worked on deep-learning methods for drought prediction in Sri Lanka using recurrent neural network approaches."
+  },
+  {
+    date: "2021",
+    title: "JENNIFER2 mentorship and summer school",
+    description: "Explored neural-network methods and basic CNN implementation on FPGA-related workflows during the mentorship program."
+  },
+  {
+    date: "2021–2022",
+    title: "CERN UOC / CMS-GEM exposure",
+    description: "Gained research exposure connected to detector control systems, data handling, and analysis."
+  },
+  {
+    date: "2018",
+    title: "Asian Science Camp",
+    description: "Represented Sri Lanka at the Asian Science Camp in Indonesia."
+  }
+];
+
+const workingStyle = [
+  {
+    title: "Careful with assumptions",
+    text: "I prefer to make data limitations, modelling choices, and evaluation gaps explicit."
+  },
+  {
+    title: "Readable technical work",
+    text: "Code, documentation, and results should be understandable after the initial excitement fades."
+  },
+  {
+    title: "Research connected to use",
+    text: "I like research questions that connect to real systems, whether in energy, retrieval, climate, or privacy."
+  }
+];
+
+const interests = [
+  "Retrieval-augmented generation",
+  "NLP evaluation",
+  "Time-series forecasting",
+  "Energy analytics",
+  "Privacy-preserving retrieval",
+  "Climate modelling",
+  "Scientific machine learning",
+  "Data visualization"
+];
 ---
 <BaseLayout
   title="About — Eran Gamage"
-  description="About Eran Gamage, a physics-trained master's student and researcher in data science working across AI systems, retrieval, energy analytics, and privacy-preserving protocols."
+  description="About Eran Gamage, from physics training to data science, retrieval systems, energy analytics, privacy-aware access, and climate modelling."
 >
   <section class="max-w-3xl space-y-5">
     <p class="eyebrow">About</p>
-    <h1 class="text-3xl font-semibold tracking-tight text-white md:text-5xl">
-      Physics background, data science practice.
+    <h1 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-5xl">
+      From physics to data systems.
     </h1>
-    <p class="text-lg leading-8 text-slate-300">
-      I’m a master’s student and researcher in data science with a physics background from the University of Colombo and current work connected to RMIT. I like problems where modelling, systems thinking, and careful evaluation all matter.
+    <p class="text-lg leading-8 text-[var(--muted)]">
+      My background is in physics, where I learned to think carefully about measurement, assumptions, uncertainty, and models. That way of thinking still shapes how I approach data science.
     </p>
-    <p class="leading-8 text-slate-300">
-      My recent work sits around retrieval-augmented generation, NLP evaluation, Australian energy grid analytics, and privacy-preserving retrieval ideas for blockchain systems. I’m interested in building systems that are understandable, reproducible, and useful beyond a demo.
+    <p class="leading-8 text-[var(--muted)]">
+      I’m currently a master’s student in Data Science at RMIT University. My work is moving toward applied retrieval and modelling work: retrieval-augmented generation, NLP evaluation, energy-grid analytics, and privacy-aware access to information.
+    </p>
+    <p class="leading-8 text-[var(--muted)]">
+      I’m most interested in systems where the output needs to be trusted — not because the model sounds confident, but because the process can be inspected.
     </p>
   </section>
 
-  <section class="mt-12 grid gap-6 md:grid-cols-3">
-    <article class="card">
-      <h2 class="text-xl font-semibold text-white">What I study</h2>
-      <p class="mt-3 leading-7 text-slate-300">
-        Machine learning, retrieval systems, time-series modelling, and data pipelines for real-world datasets.
-      </p>
-    </article>
+  <section>
+    <div class="max-w-3xl space-y-4">
+      <p class="eyebrow">Background</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">Background</h2>
+    </div>
+    <div class="mt-6">
+      {timeline.map((item) => (
+        <TimelineItem date={item.date} title={item.title} description={item.description} />
+      ))}
+    </div>
+  </section>
 
-    <article class="card">
-      <h2 class="text-xl font-semibold text-white">What I value</h2>
-      <p class="mt-3 leading-7 text-slate-300">
-        Clear baselines, grounded claims, readable code, and results that can be checked by someone else.
-      </p>
-    </article>
+  <section>
+    <div class="max-w-3xl space-y-4">
+      <p class="eyebrow">Working style</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">How I like to work</h2>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      {workingStyle.map((item) => (
+        <article class="border-t border-[var(--border-soft)] py-5">
+          <h3 class="text-xl font-semibold text-[var(--text)]">{item.title}</h3>
+          <p class="mt-3 leading-7 text-[var(--muted)]">{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
 
-    <article class="card">
-      <h2 class="text-xl font-semibold text-white">What I’m exploring</h2>
-      <p class="mt-3 leading-7 text-slate-300">
-        Practical AI systems for decision support, energy data, and privacy-aware access to information.
-      </p>
-    </article>
+  <section>
+    <div class="max-w-3xl space-y-4">
+      <p class="eyebrow">Interests</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">Interests</h2>
+    </div>
+    <div class="mt-6">
+      <TagList tags={interests} />
+    </div>
   </section>
 </BaseLayout>
