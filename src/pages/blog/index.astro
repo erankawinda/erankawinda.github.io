@@ -1,8 +1,38 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = [
+  {
+    href: "/blog/hello",
+    title: "A small place for notes",
+    description: "What I plan to write about: retrieval systems, energy analytics, evaluation, and research notes.",
+    date: "May 2026"
+  }
+];
 ---
-<BaseLayout title="Blog">
-  <ul class="space-y-4">
-    <li><a class="font-medium hover:underline" href="/blog/hello">Hello, World (Why Astro?)</a></li>
-  </ul>
+<BaseLayout
+  title="Notes — Eran Gamage"
+  description="Short notes from Eran Gamage on AI systems, data science, retrieval, and research practice."
+>
+  <section class="max-w-3xl space-y-4">
+    <p class="eyebrow">Notes</p>
+    <h1 class="text-3xl font-semibold tracking-tight text-white md:text-5xl">Writing</h1>
+    <p class="text-lg leading-8 text-slate-300">
+      Short, practical notes on ideas I’m working through. The goal is clarity, not volume.
+    </p>
+  </section>
+
+  <section class="mt-10 space-y-4">
+    {posts.map((post) => (
+      <a class="card block" href={post.href}>
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h2 class="text-xl font-semibold text-white">{post.title}</h2>
+            <p class="mt-2 leading-7 text-slate-300">{post.description}</p>
+          </div>
+          <span class="tag shrink-0">{post.date}</span>
+        </div>
+      </a>
+    ))}
+  </section>
 </BaseLayout>

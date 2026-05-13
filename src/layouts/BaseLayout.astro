@@ -1,39 +1,76 @@
 ---
-const {
-  title = "Eran Gamage — Data Scientist",
-  description = "Minimalist portfolio: RAG, NLP, Energy Analytics, ZK."
-} = Astro.props;
 import "../styles/global.css";
+
+const frontmatter = Astro.props.frontmatter ?? {};
+
+const {
+  title = frontmatter.title ?? "Eran Gamage — Data Science & AI Systems",
+  description = frontmatter.description ?? "Minimal portfolio for Eran Gamage, a physics-trained data scientist working on practical AI systems, retrieval, energy analytics, and privacy-preserving data access."
+} = Astro.props;
+
+const navItems = [
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Notes" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" }
+];
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <meta name="theme-color" content="#0b1120" />
     <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
     <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- Glass nav -->
-    <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-900/60 backdrop-blur">
-      <div class="container-nice flex h-14 items-center justify-between">
-        <a href="/" class="font-semibold tracking-tight">Eran</a>
-        <nav class="flex items-center gap-6 text-sm text-slate-300">
-          <a href="/projects" class="hover:text-white">Projects</a>
-          <a href="/blog" class="hover:text-white">Blog</a>
-          <a href="/about" class="hover:text-white">About</a>
-          <a href="/contact" class="hover:text-white">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container-nice flex min-h-16 items-center justify-between gap-4 py-3">
+          <a href="/" class="brand" aria-label="Eran Gamage home">
+            <span class="brand-mark">EG</span>
+            <span class="hidden sm:inline">Eran Gamage</span>
+          </a>
 
-    <main class="container-nice py-14">
-      <slot />
-    </main>
+          <nav class="flex flex-wrap items-center justify-end gap-1" aria-label="Primary navigation">
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                class:list={["nav-link", isActive(item.href) && "nav-link-active"]}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
 
-    <footer class="container-nice py-10 text-sm text-slate-400">
-      © {new Date().getFullYear()} Eran Dodampe Gamage · Built with Astro + Tailwind
-    </footer>
+      <main class="container-nice content-area py-14 md:py-20">
+        <slot />
+      </main>
+
+      <footer class="container-nice border-t border-white/10 py-8 text-sm text-slate-400">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Eran Gamage</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-2">
+            <a class="footer-link" href="mailto:erangamage@gmail.com">Email</a>
+            <a class="footer-link" href="https://github.com/erankawinda" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="footer-link" href="https://linkedin.com/in/eran-gamage" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
