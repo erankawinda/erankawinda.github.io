@@ -1,35 +1,46 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Projects — Eran Gamage">
-  <h1 class="text-3xl font-semibold mb-8">Projects</h1>
+<BaseLayout title="Projects - Eran Gamage">
+  <section class="max-w-3xl space-y-4">
+    <p class="eyebrow">Selected work</p>
+    <h1 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Projects</h1>
+    <p class="muted-copy">
+      A small set of research and applied data science projects across retrieval systems, energy analytics, privacy-preserving protocols, and climate modelling.
+    </p>
+  </section>
 
-  <div class="grid gap-6 md:grid-cols-2">
+  <div class="mt-10 grid gap-5 md:grid-cols-2">
     <article class="card">
-      <h2 class="text-xl font-semibold">Investor Assistant RAG</h2>
-      <p class="mt-2 text-slate-300">Fast, provenance-aware answers for ASX companies.</p>
-      <ul class="mt-3 list-disc pl-5 text-slate-300">
-        <li>Stack: Python embeddings, RAG eval (ROUGE/BERTScore/NDCG), Streamlit</li>
-        <li><a class="link" href="https://github.com/rmit-ds-investor-assistant" target="_blank">GitHub org</a></li>
+      <span class="tag">RAG / NLP</span>
+      <h2 class="mt-3 text-xl font-semibold">Investor Assistant RAG</h2>
+      <p class="mt-2 muted-copy">A retrieval system for answering questions about ASX companies with attention to provenance and evaluation.</p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-300">
+        <li>Python embeddings, RAG evaluation, and Streamlit interface work.</li>
+        <li><a class="link" href="https://github.com/rmit-ds-investor-assistant" target="_blank" rel="noreferrer">GitHub organization</a></li>
       </ul>
     </article>
 
     <article class="card">
-      <h2 class="text-xl font-semibold">GridAI — AI & the Australian Grid</h2>
-      <p class="mt-2 text-slate-300">Forecasting & analysis on AEMO Dispatch SCADA and demand datasets.</p>
-      <ul class="mt-3 list-disc pl-5 text-slate-300">
-        <li>Models: RF/XGBoost; time-aware CV; reproducible pipelines</li>
+      <span class="tag">Energy analytics</span>
+      <h2 class="mt-3 text-xl font-semibold">GridAI - Australian Grid Analytics</h2>
+      <p class="mt-2 muted-copy">Forecasting and analysis on AEMO Dispatch SCADA and demand datasets.</p>
+      <ul class="mt-4 space-y-2 text-sm text-slate-300">
+        <li>Random forest and XGBoost baselines.</li>
+        <li>Time-aware validation and reproducible data workflows.</li>
       </ul>
     </article>
 
     <article class="card">
-      <h2 class="text-xl font-semibold">UBT / Private Retrieval (ZK)</h2>
-      <p class="mt-2 text-slate-300">PIR-style private queries, proofs of innocence, subtree structures, BLAKE3.</p>
+      <span class="tag">Privacy</span>
+      <h2 class="mt-3 text-xl font-semibold">UBT / Private Retrieval (ZK)</h2>
+      <p class="mt-2 muted-copy">Exploration of PIR-style private queries, proofs of innocence, subtree structures, and BLAKE3-oriented retrieval design.</p>
     </article>
 
     <article class="card">
-      <h2 class="text-xl font-semibold">Deep Learning for Drought (Sri Lanka)</h2>
-      <p class="mt-2 text-slate-300">RNN/ANN for SPEI indices; long-term drought prediction.</p>
+      <span class="tag">Climate modelling</span>
+      <h2 class="mt-3 text-xl font-semibold">Deep Learning for Drought (Sri Lanka)</h2>
+      <p class="mt-2 muted-copy">RNN and ANN models for SPEI indices, focused on long-term drought prediction and climate risk analysis.</p>
     </article>
   </div>
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
-title: "Hello, World (Why Astro?)"
+title: "Why this site is small"
 pubDate: 2025-10-07
-description: "Why I chose Astro + Tailwind + GitHub Pages."
+description: "A short note on using Astro, Tailwind, and static pages for a personal portfolio."
 ---
-Astro ships little JavaScript by default, builds fast static pages, and works great with Tailwind.
+This website is intentionally small. Astro keeps the pages static by default, Tailwind makes the visual system easy to adjust, and GitHub Pages is enough for a personal portfolio that mainly needs clear writing, project summaries, and contact links.

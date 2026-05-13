@@ -1,46 +1,52 @@
-# Astro Starter Kit: Basics
+# Eran Gamage Portfolio
+
+Personal portfolio website for Eran Gamage, built with Astro and Tailwind CSS.
+
+The site is intentionally minimal: dark background, compact navigation, simple cards, and content focused on applied AI, retrieval systems, NLP evaluation, energy analytics, privacy-preserving retrieval, and climate modelling.
+
+## Stack
+
+- Astro 5
+- Tailwind CSS 4
+- Vite
+- GitHub Pages
+
+## Project Structure
+
+- `src/layouts/BaseLayout.astro` - shared HTML shell, navigation, footer, and font loading
+- `src/styles/global.css` - Tailwind import, theme variables, reusable classes, and global styles
+- `src/pages/index.astro` - homepage
+- `src/pages/projects.astro` - selected project summaries
+- `src/pages/about.astro` - background and research interests
+- `src/pages/contact.astro` - contact links
+- `src/pages/blog/` - short notes
+
+## Commands
+
+Install dependencies:
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Start the local development server:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Build the static site:
 
-## 🧞 Commands
+```sh
+npm run build
+```
 
-All commands are run from the root of the project, from a terminal:
+Preview the production build locally:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm run preview
+```
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The Astro config sets the site URL to `https://erankawinda.github.io`. The repository is intended to deploy through GitHub Pages.

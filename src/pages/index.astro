@@ -1,29 +1,54 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Eran Gamage — AI & Data Science">
-  <!-- HERO -->
-  <section class="fade-up text-center space-y-6">
-    <div class="mx-auto h-28 w-28 rounded-full ring-2 ring-[var(--ring)] bg-[url('/eran-profile.jpg')] bg-cover bg-center"></div>
-    <h1 class="prose-ish h1">Hi, I’m Eran 👋</h1>
-    <p class="prose-ish max-w-2xl mx-auto">
-      Physicist-turned data scientist. I build practical AI systems—RAG, NLP, and grid analytics (AEMO/NEM)—and explore privacy-preserving protocols (UBT/PIR) in blockchain.
-    </p>
-    <div class="flex flex-wrap justify-center gap-3 pt-2">
-      <a class="btn btn-primary" href="/Eran_Dodampe_Gamage_CV.pdf">Download CV</a>
-      <a class="btn btn-ghost" href="/projects">View Projects</a>
+<BaseLayout title="Eran Gamage - AI and Data Science">
+  <section class="fade-up space-y-8">
+    <div class="space-y-5">
+      <p class="eyebrow">Physics, data science, and applied AI</p>
+      <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+        Eran Gamage
+      </h1>
+      <p class="max-w-3xl text-lg leading-8 text-slate-300">
+        I am a physics-trained data science researcher working on practical AI systems, retrieval-augmented generation, NLP evaluation, Australian energy grid analytics, privacy-preserving retrieval protocols, and climate modelling.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <a class="btn btn-primary" href="/projects">View Projects</a>
+      <a class="btn btn-ghost" href="/contact">Contact</a>
     </div>
   </section>
 
-  <!-- FEATURE CARDS -->
-  <section class="mt-12 grid gap-6 md:grid-cols-2">
-    <a href="/projects" class="card">
-      <h3 class="mb-2 text-lg font-semibold">Featured Projects</h3>
-      <p class="text-slate-300">Investor Assistant RAG, GridAI (AEMO), UBT/PIR exploration.</p>
-    </a>
-    <a href="/blog" class="card">
-      <h3 class="mb-2 text-lg font-semibold">Notes & Blog</h3>
-      <p class="text-slate-300">Short writeups on RAG evaluation and energy analytics.</p>
-    </a>
+  <section class="mt-14 grid gap-4 md:grid-cols-3">
+    <article class="card">
+      <p class="eyebrow">Applied AI</p>
+      <h2 class="mt-3 text-lg font-semibold">RAG and NLP evaluation</h2>
+      <p class="mt-2 muted-copy">
+        Retrieval, answer grounding, and evaluation workflows for practical information systems.
+      </p>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">Energy</p>
+      <h2 class="mt-3 text-lg font-semibold">Australian grid analytics</h2>
+      <p class="mt-2 muted-copy">
+        Forecasting and analysis using AEMO and NEM datasets with reproducible ML pipelines.
+      </p>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">Research</p>
+      <h2 class="mt-3 text-lg font-semibold">Privacy-preserving retrieval</h2>
+      <p class="mt-2 muted-copy">
+        Notes and experiments around private queries, proofs, and retrieval-oriented protocol design.
+      </p>
+    </article>
+  </section>
+
+  <section class="mt-10 card">
+    <p class="eyebrow">Current focus</p>
+    <p class="mt-3 muted-copy">
+      I am interested in small, dependable systems that connect research methods with real datasets: clear baselines, careful evaluation, and outputs that can be checked.
+    </p>
   </section>
 </BaseLayout>
