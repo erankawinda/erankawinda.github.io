@@ -13,6 +13,7 @@ export type Project = {
   tags: string[];
   status: string;
   featured?: boolean;
+  caseStudyHref?: string;
   links: { href: string; label: string }[];
 };
 
@@ -24,14 +25,17 @@ export const projects: Project[] = [
     category: "Language models and efficient fine-tuning",
     summary: "Master’s research on generating short advertising headlines and descriptions from a landing-page URL while training only a small part of a language model.",
     details: [
-      "The model receives the URL text and learns from example ads. The pipeline prepares the data, keeps examples from the same URL together when splitting, and generates structured headline-and-description outputs.",
-      "Compares adapter methods and checks generated text for format, completeness, and duplication. Adapters are small trainable additions to a largely frozen model.",
-      "Includes a tested pipeline for controlled adapter-selection experiments. The next research step is the full GPU comparison of selection methods."
+      "Built a pipeline for data preparation, adapter training, structured generation, and evaluation. The model uses the URL text without reading the page.",
+      "The current adapter-selection protocol is implemented and tested on CPU; the full GPU comparison is the next research step."
     ],
     tags: ["Python", "PyTorch", "QLoRA", "NLP", "Evaluation"],
     status: "Master’s research · Private research code",
     featured: true,
-    links: [{ href: "/contact", label: "Discuss this research" }]
+    caseStudyHref: "/projects/autogate-qlora/",
+    links: [
+      { href: "/projects/autogate-qlora/", label: "Read project" },
+      { href: "/contact", label: "Discuss this research" }
+    ]
   },
   {
     id: "spei-drought-prediction",
@@ -40,14 +44,17 @@ export const projects: Project[] = [
     category: "Climate and environmental modelling",
     summary: "A benchmark for predicting next month’s drought index at three Sri Lankan locations, rebuilt from undergraduate research.",
     details: [
-      "SPEI summarises wet and dry conditions over three- or six-month windows. The benchmark uses historical observations, evaluates models in time order, and compares them with repeating the latest value.",
-      "On the retrospective 2000–2019 panel, ridge regression reduced mean absolute error from 0.638 to 0.542 for SPEI-3 and from 0.440 to 0.336 for SPEI-6. The repository includes saved predictions and uncertainty estimates.",
-      "Drought-detection results vary by target. The recovered three-location data support this historical benchmark; they do not fully reproduce the original four-region study or establish live forecasting performance."
+      "Rebuilt the analysis around chronological evaluation, simple baselines, saved predictions, and uncertainty estimates.",
+      "Ridge regression reduced average forecasting error for both drought indices in the historical benchmark. Drought-detection results differed between the two targets."
     ],
     tags: ["Climate data", "SPEI", "Ridge regression", "Time series"],
     status: "Undergraduate research and reproducibility study",
     featured: true,
-    links: [{ href: "https://github.com/erankawinda/spei-drought-prediction", label: "View repository" }]
+    caseStudyHref: "/projects/spei-drought-prediction/",
+    links: [
+      { href: "/projects/spei-drought-prediction/", label: "Read project" },
+      { href: "https://github.com/erankawinda/spei-drought-prediction", label: "View repository" }
+    ]
   },
   {
     id: "nem-demand-forecasting",
@@ -56,14 +63,17 @@ export const projects: Project[] = [
     category: "Forecasting and energy systems",
     summary: "Predicts measured operational demand for the next half hour across Australia’s National Electricity Market (NEM), using public AEMO data.",
     details: [
-      "Validates original half-hour measurements and requires all five regions before calculating the NEM total. Models use demand history and calendar information.",
-      "The October–December 2024 pilot contains 4,416 complete half hours. On 612 test forecasts, random forest achieved a mean absolute error of 177.94 MW, compared with 487.30 MW for persistence.",
-      "Includes three baselines, XGBoost, saved predictions, source hashes, and automated timing checks. The historical evaluation assumes completed measurements are available at each interval’s end."
+      "Checks measured demand from all five NEM regions and compares random forest and XGBoost with three simple baselines.",
+      "On 612 test forecasts from the October–December 2024 pilot, random forest achieved a mean absolute error of 177.94 MW, compared with 487.30 MW for persistence."
     ],
     tags: ["Energy data", "Forecasting", "XGBoost", "Python"],
     status: "Measured-demand historical benchmark",
     featured: true,
-    links: [{ href: "https://github.com/erankawinda/nem-demand-forecasting-australia", label: "View repository" }]
+    caseStudyHref: "/projects/nem-demand-forecasting/",
+    links: [
+      { href: "/projects/nem-demand-forecasting/", label: "Read project" },
+      { href: "https://github.com/erankawinda/nem-demand-forecasting-australia", label: "View repository" }
+    ]
   },
   {
     id: "investor-assistant-rag",
@@ -73,7 +83,7 @@ export const projects: Project[] = [
     summary: "Evaluation work for a team-built retrieval assistant developed during RMIT coursework.",
     details: [
       "Authored the retained rag_eval package, including evaluation code, per-query and cohort summaries, plots, and documentation.",
-      "Compared generated answers using ROUGE-L and Sentence-BERT similarity across retrieval depths of 1, 3, and 5 documents.",
+      "Compared generated answers using ROUGE-Lsum text-overlap scores and Sentence-BERT similarity across retrieval depths of 1, 3, and 5 documents.",
       "Reported refusal indicators for questions outside the knowledge base. My contribution covered evaluation; the broader application was team work."
     ],
     tags: ["RAG", "NLP", "Sentence-BERT", "Evaluation"],

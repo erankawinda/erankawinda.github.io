@@ -81,3 +81,7 @@ as separate projects.
 
 Notes content and navigation have been removed. Former `/blog/` and
 `/blog/hello/` addresses redirect to Work through Astro's static redirect pages.
+
+## Public CV
+
+The editable LaTeX source is [documents/academic-cv.tex](documents/academic-cv.tex). The website serves the compiled [academic CV](public/cv/Eran-Dodampe-Gamage-CV.pdf); update both files together when revising it. Compile the source with LuaLaTeX or pdfLaTeX in a temporary build directory.
