@@ -17,7 +17,7 @@ export const projects: Project[] = [
     details: [
       "Authored the retained rag_eval package, including evaluation code, per-query and cohort summaries, plots, and documentation.",
       "Measured generated-answer quality with ROUGE-L and Sentence-BERT cosine similarity across retrieval depths k=1, 3, and 5.",
-      "Reported good-refusal and hallucination rates for out-of-knowledge-base questions; the broader application was team work."
+      "Reported regex-based refusal and non-refusal indicators for out-of-knowledge-base questions; the broader application was team work."
     ],
     tags: ["RAG", "NLP", "ROUGE-L", "Sentence-BERT", "Evaluation"],
     status: "Authored evaluation component of an RMIT team project",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     details: [
       "Data preparation enforces exact five-minute grid alignment, all six readings per regional half-hour, and complete coverage of all five NEM regions.",
       "Uses leakage-safe chronological evaluation to compare XGBoost and random forest with persistence, previous-day, and previous-week baselines.",
-      "Includes pinned Python 3.10 dependencies, synthetic methodological tests, CI, provenance notes, and per-run data, software, and split manifests; no unsupported metric is published without the external data snapshot."
+      "Includes pinned Python 3.10 dependencies, synthetic methodological tests, CI, provenance notes, and a per-run manifest covering the data hash, software, and split; no unsupported metric is published without the external data snapshot."
     ],
     tags: ["Energy data", "Forecasting", "Time series", "XGBoost", "Python"],
     status: "Reproducible forecasting pipeline",
