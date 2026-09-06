@@ -25,7 +25,7 @@ export const projects: Project[] = [
     linkLabel: "View the team repository"
   },
   {
-    title: "GridAI — Australian energy analytics",
+    title: "Australian NEM demand forecasting",
     category: "Forecasting and energy systems",
     summary: "An exploratory project using Australian electricity-market data to study data preparation and short-horizon demand forecasting.",
     details: [
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     ],
     tags: ["Energy data", "Forecasting", "Time series", "XGBoost", "Python"],
     status: "Exploratory modelling project",
-    link: "https://github.com/erankawinda/GridAI---AI-impact-on-the-electricity-grid-Australia",
+    link: "https://github.com/erankawinda/nem-demand-forecasting-australia",
     linkLabel: "View the repository"
   },
   {
