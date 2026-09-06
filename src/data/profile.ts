@@ -16,7 +16,7 @@ export const profile = {
   focusAreas: [
     {
       title: "Scientific machine learning",
-      description: "Machine-learning methods for scientific problems, with a growing interest in particle-physics simulation and analysis."
+      description: "Machine-learning methods for scientific problems, with particular interest in particle-physics simulation and analysis."
     },
     {
       title: "Forecasting physical systems",
@@ -28,7 +28,7 @@ export const profile = {
     }
   ],
   narrative: [
-    "I recently completed a Master of Data Science with Distinction at RMIT University, following a Bachelor of Science Honours in Physics from the University of Colombo.",
+    "I completed a Master of Data Science with Distinction at RMIT University, following a Bachelor of Science Honours in Physics from the University of Colombo.",
     "During my studies, I worked on time-series modelling, retrieval-augmented systems, Australian energy data, and machine-learning evaluation.",
     "I am especially interested in scientific machine learning and in research where results must be tested against clear baselines and reported with appropriate limits."
   ],

@@ -6,8 +6,8 @@ description: "A short note on writing things down while learning and building."
 ---
 # Why keep notes?
 
-Technical work is easier to trust when the reasoning around it is visible.
+Technical work is easier to trust when its reasoning is visible.
 
-I want this section to become a small record of ideas I am working through: scientific machine learning, retrieval evaluation, time-series modelling, energy data, and the habits that make research code easier to revisit.
+These notes record the question, method, evidence, and limits behind selected work in scientific machine learning, retrieval evaluation, time-series modelling, and energy data.
 
-The aim is not to publish frequently. The aim is to write clearly enough that a future reader — including me — can understand the question, the method, and the limits of the result.
+The useful standard is not publication frequency. It is whether a future reader — including me — can understand what was tested, reproduce the reasoning, and see where the evidence stops.
