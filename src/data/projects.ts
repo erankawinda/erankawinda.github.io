@@ -11,6 +11,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "SPEI drought forecasting in Sri Lanka",
+    category: "Climate and environmental modelling",
+    summary: "A reproducible benchmark for predicting next month's drought index at three Sri Lankan locations, rebuilt from undergraduate research.",
+    details: [
+      "SPEI measures wet and dry conditions. This benchmark predicts its three-month and six-month summaries one month ahead; it does not reproduce the wider four-region study presented at ICMAS 2021.",
+      "Checks input-file hashes, selects models on earlier time periods, compares with persistence (repeating the latest value), and estimates uncertainty with time-series block resampling.",
+      "On the retrospective 2000–2019 panel, ridge regression reduced mean absolute error from 0.638 to 0.542 for SPEI-3 and from 0.440 to 0.336 for SPEI-6. The paired 95% intervals for error reduction were [0.054, 0.137] and [0.076, 0.131], respectively.",
+      "F1 balances missed droughts and false alerts. It was 0.527 vs 0.561 for persistence at SPEI-3, and 0.754 vs 0.688 at SPEI-6. A documented correction to fold-level F1 leaves these full-period scores unchanged; SPEI-3 does not show better drought detection.",
+      "Reported scores have been checked against the retained predictions. The evaluation period was already inspected, and the recovered SPEI calibration method is unknown, so this is not independent or operational validation."
+    ],
+    tags: ["Climate data", "SPEI", "Ridge regression", "Time series", "Reproducibility"],
+    status: "Historical study and reproducibility benchmark",
+    link: "https://github.com/erankawinda/spei-drought-prediction",
+    linkLabel: "View the repository"
+  },
+  {
+    title: "Australian NEM forecasting code",
+    category: "Forecasting and energy systems",
+    summary: "A forecasting-code demonstration for Australian electricity-market records, with chronological evaluation and automated data checks.",
+    details: [
+      "Data preparation checks the five-minute time grid, requires all six readings per regional half-hour, and keeps only intervals covering all five NEM regions.",
+      "Compares XGBoost and random forest with persistence, previous-day, and previous-week baselines using training, validation, and test periods in time order.",
+      "Includes pinned dependencies, interval-alignment tests with synthetic data, and run records for the input hash, software, and evaluation split.",
+      "The source field's meaning and release timing must be established for any chosen dataset. Synthetic tests do not establish real-data forecast accuracy or measured operational-demand performance."
+    ],
+    tags: ["Energy data", "Forecasting", "Time series", "XGBoost", "Python"],
+    status: "Forecasting-code demonstration",
+    link: "https://github.com/erankawinda/nem-demand-forecasting-australia",
+    linkLabel: "View the repository"
+  },
+  {
     title: "Investor Assistant RAG (team project)",
     category: "Retrieval-augmented generation",
     summary: "Evaluation work for a team-built retrieval assistant developed as part of RMIT coursework.",
@@ -23,34 +54,5 @@ export const projects: Project[] = [
     status: "Authored evaluation component of an RMIT team project",
     link: "https://github.com/rmit-ds-investor-assistant/WIL_RAG/tree/main/rag_eval",
     linkLabel: "View my evaluation work"
-  },
-  {
-    title: "Australian NEM demand forecasting",
-    category: "Forecasting and energy systems",
-    summary: "A reproducible 30-minute-ahead demand-forecasting pipeline using public Australian electricity-market records.",
-    details: [
-      "Data preparation enforces exact five-minute grid alignment, all six readings per regional half-hour, and complete coverage of all five NEM regions.",
-      "Uses leakage-safe chronological evaluation to compare XGBoost and random forest with persistence, previous-day, and previous-week baselines.",
-      "Includes pinned Python 3.10 dependencies, synthetic methodological tests, CI, provenance notes, and a per-run manifest covering the data hash, software, and split; no unsupported metric is published without the external data snapshot."
-    ],
-    tags: ["Energy data", "Forecasting", "Time series", "XGBoost", "Python"],
-    status: "Reproducible forecasting pipeline",
-    link: "https://github.com/erankawinda/nem-demand-forecasting-australia",
-    linkLabel: "View the repository"
-  },
-  {
-    title: "SPEI drought forecasting in Sri Lanka",
-    category: "Climate and environmental modelling",
-    summary: "A reproducible one-month-ahead SPEI forecasting benchmark for three Sri Lankan locations, reconstructed from undergraduate research.",
-    details: [
-      "The historical undergraduate study explored multivariate recurrent neural networks, including stacked LSTM architectures, and was presented at ICMAS 2021.",
-      "The current benchmark uses hash-bound inputs, nested rolling-origin evaluation, persistence baselines, and paired block-bootstrap uncertainty.",
-      "On the common 2000–2019 panel, ridge_ar24 reduced SPEI-3 MAE to 0.542 from 0.638 persistence (95% paired-reduction interval [0.054, 0.137]); ridge_ar24_met24 reduced SPEI-6 MAE to 0.336 from 0.440 ([0.076, 0.131]).",
-      "Drought-event F1 was 0.527 vs 0.561 at SPEI-3 and 0.754 vs 0.688 at SPEI-6. These are internal retrospective results, not operational or external validation."
-    ],
-    tags: ["SPEI", "LSTM", "Time series", "Leakage-aware evaluation", "Sri Lanka"],
-    status: "Historical study and reproducibility benchmark",
-    link: "https://github.com/erankawinda/spei-drought-prediction",
-    linkLabel: "View the repository"
   }
 ];
