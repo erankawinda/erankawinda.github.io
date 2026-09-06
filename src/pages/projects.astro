@@ -2,25 +2,29 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-import { projects } from "../data/projects";
+import { projects, projectGroups } from "../data/projects";
 ---
 <BaseLayout
-  title="Selected Work — Eran Gamage"
-  description="Selected work by Eran Gamage in climate and energy forecasting, scientific data analysis, and retrieval evaluation."
+  title="Work — Eran Gamage"
+  description="Projects by Eran Gamage in language-model tuning, climate and energy forecasting, retrieval evaluation, data visualisation, and web applications."
 >
-  <SectionHeader
-    eyebrow="Selected work"
-    title="Projects and research threads"
-    description="Selected projects showing how I work with scientific data, compare models, and explain what the evidence supports."
-  />
-
-  <section class="divide-y divide-[var(--border-soft)] border-y border-[var(--border-soft)]">
-    {projects.map((project) => <ProjectCard project={project} />)}
+  <section class="space-y-7">
+    <SectionHeader
+      eyebrow="Work"
+      title="Projects and research"
+      description="Research, applications, and coursework spanning language models, climate, energy, and data science."
+    />
+    <nav aria-label="Project categories" class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+      {projectGroups.map((group) => <a class="link" href={`#${group.id}`}>{group.title}</a>)}
+    </nav>
   </section>
 
-  <section class="max-w-3xl border-l border-[var(--border)] pl-5">
-    <p class="leading-8 text-[var(--muted)]">
-      Each repository explains the problem, method, available evidence, and limits. Team work is identified alongside my contribution.
-    </p>
-  </section>
+  {projectGroups.map((group) => (
+    <section id={group.id} class="project-group" aria-labelledby={`${group.id}-title`}>
+      <h2 id={`${group.id}-title`} class="mb-8 text-2xl font-semibold md:text-3xl">{group.title}</h2>
+      <div class="divide-y divide-[var(--border-soft)] border-y border-[var(--border-soft)]">
+        {projects.filter((project) => project.group === group.id).map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+  ))}
 </BaseLayout>

@@ -246,6 +246,13 @@ a {
 .project-entry-meta,
 .project-entry-body {
   @apply px-0 md:px-5;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.project-entry,
+.project-group {
+  scroll-margin-top: 9rem;
 }
 
 .timeline {

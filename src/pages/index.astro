@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
 
 const directions = [
   {
@@ -11,40 +12,27 @@ const directions = [
     text: "Clear data provenance, time-aware validation, and baseline comparisons for environmental and electricity-demand data."
   },
   {
-    title: "Retrieval and evaluation",
-    text: "RAG workflows, document search, answer grounding, and evaluation beyond surface-level demos."
+    title: "Language models and retrieval",
+    text: "Efficient model tuning, structured text generation, and retrieval systems with clear evaluation methods."
   }
 ];
 
 const principles = [
   {
     title: "Start from the system",
-    text: "I try to understand the data source, constraints, and failure modes before choosing a model."
+    text: "I start with the question, the data source, and the assumptions before choosing a model."
   },
   {
     title: "Make evaluation visible",
-    text: "For retrieval and forecasting work, I care about baselines, temporal splits, uncertainty, and readable evidence."
+    text: "I compare methods with simple baselines and use evaluation designs that fit the data."
   },
   {
     title: "Keep the implementation legible",
-    text: "Good technical work should be easy to inspect, reproduce, and explain to someone with a different background."
+    text: "I document the method, results, and practical scope so others can understand and reproduce the work."
   }
 ];
 
-const selectedWork = [
-  {
-    title: "SPEI drought forecasting",
-    text: "A reproducible one-month-ahead climate benchmark with baseline comparisons, uncertainty estimates, and documented historical-data limits."
-  },
-  {
-    title: "Electricity demand forecasting",
-    text: "A half-hour-ahead benchmark using measured Australian electricity demand, with chronological model comparisons and a reproducible historical pilot."
-  },
-  {
-    title: "Investor Assistant RAG",
-    text: "Authored the team repository’s retained evaluation package for answer quality and out-of-knowledge-base behaviour."
-  }
-];
+const selectedWork = projects.filter((project) => project.featured);
 ---
 <BaseLayout
   title="Eran Gamage — Physics and Data Science"
@@ -64,7 +52,7 @@ const selectedWork = [
       </div>
 
       <div class="flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/projects">View selected work</a>
+        <a class="btn btn-primary" href="/projects">Explore my work</a>
         <a class="btn btn-ghost" href="/about">About me</a>
       </div>
     </div>
@@ -107,26 +95,27 @@ const selectedWork = [
         Selected work
       </h2>
       <p class="text-lg leading-8 text-[var(--muted)]">
-        Selected work in climate and energy forecasting, scientific data analysis, and retrieval evaluation.
+        Research in language-model tuning, climate and energy forecasting, and retrieval evaluation.
       </p>
     </div>
 
     <div class="mt-8 divide-y divide-[var(--border-soft)] border-y border-[var(--border-soft)]">
       {selectedWork.map((item) => (
         <article class="grid gap-3 py-6 md:grid-cols-[0.35fr_0.65fr]">
-          <h3 class="text-xl font-semibold text-[var(--text)]">{item.title}</h3>
-          <p class="leading-7 text-[var(--muted)]">{item.text}</p>
+          <h3 class="text-xl font-semibold text-[var(--text)]"><a class="hover:text-[var(--accent)]" href={`/projects/#${item.id}`}>{item.title}</a></h3>
+          <p class="leading-7 text-[var(--muted)]">{item.summary}</p>
         </article>
       ))}
     </div>
+    <a class="link mt-6 inline-flex text-sm font-medium" href="/projects">Explore all projects</a>
   </section>
 
   <section class="grid gap-5 border border-[var(--border-soft)] p-6 md:grid-cols-[0.7fr_0.3fr] md:items-center">
     <div>
       <p class="eyebrow">Contact</p>
-      <h2 class="mt-4 text-2xl font-semibold text-[var(--text)]">Open to thoughtful technical conversations.</h2>
+      <h2 class="mt-4 text-2xl font-semibold text-[var(--text)]">Research and collaboration</h2>
       <p class="mt-3 leading-7 text-[var(--muted)]">
-        I’m interested in scientific machine learning, particle physics, data science, and careful model evaluation.
+        I welcome conversations about research opportunities and collaboration in scientific machine learning and data science.
       </p>
     </div>
     <a class="btn btn-primary md:justify-self-end" href="/contact">Get in touch</a>

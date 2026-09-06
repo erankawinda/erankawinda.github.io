@@ -11,12 +11,12 @@ const {
 const navItems = [
   { href: "/projects", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Notes" },
   { href: "/contact", label: "Contact" }
 ];
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
+const canonicalURL = new URL(pathname === "/" ? "/" : `${pathname}/`, Astro.site);
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -25,6 +25,12 @@ const isActive = (href: string) => pathname === href || (href !== "/" && pathnam
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#080d16" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eran Gamage" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" />
@@ -36,6 +42,7 @@ const isActive = (href: string) => pathname === href || (href !== "/" && pathnam
     />
   </head>
   <body>
+    <a class="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-3 focus:z-[100] focus:bg-[var(--bg)] focus:px-4 focus:py-2" href="#main-content">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="container-nice flex min-h-16 items-center justify-between gap-4 py-3">
@@ -57,7 +64,7 @@ const isActive = (href: string) => pathname === href || (href !== "/" && pathnam
         </div>
       </header>
 
-      <main class="container-nice content-area py-14 md:py-20">
+      <main id="main-content" class="container-nice content-area py-14 md:py-20">
         <slot />
       </main>
 
