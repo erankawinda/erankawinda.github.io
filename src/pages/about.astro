@@ -1,62 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TagList from "../components/TagList.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 
 const backgroundGroups = [
   {
     title: "Education",
     entries: [
-      { date: "2024–2026", title: "Master of Data Science", description: "RMIT University — completed with Distinction." },
+      { date: "2024–2026", title: "Master of Data Science", description: "RMIT University — completed with Distinction; degree conferred in July 2026." },
       { date: "2017–2021", title: "BSc Honours in Physics", description: "University of Colombo — physics, with foundations in mathematics and computer science." }
     ]
   },
   {
     title: "Research and teaching",
     entries: [
-      { date: "2021–2022", title: "Teaching Assistant", description: "University of Colombo — supported physics teaching and laboratory coursework, including course materials and student assessment." },
-      { date: "2021–2022", title: "CMS/GEM research exposure", description: "Attended technical briefings with the University of Colombo particle physics team." },
-      { date: "2021", title: "Undergraduate drought research", description: "University of Colombo — studied recurrent neural networks for drought prediction in Sri Lanka." }
+      { date: "2025–2026", title: "Master’s research", description: "RMIT University — investigated memory-efficient language-model adaptation for structured text generation from website URLs." },
+      { date: "Jun 2021–Apr 2022", title: "Temporary Teaching Assistant", description: "University of Colombo — supported General Physics laboratory classes, assessments, and remote practical materials, alongside undergraduate laboratory work and tutorials in Nuclear and Particle Physics." },
+      { date: "2021–2022", title: "CMS/GEM technical briefings", description: "Attended briefings with the University of Colombo particle physics team." },
+      { date: "Mar 2020–Mar 2021", title: "Undergraduate drought research", description: "University of Colombo — studied stacked LSTM networks for drought-index prediction in Sri Lanka. Presented the work at the International Conference on Multidisciplinary Approaches in Sciences in November 2021." }
     ]
   },
   {
     title: "Scientific programmes",
     entries: [
-      { date: "2021", title: "JENNIFER2 mentorship and summer school", description: "Implemented neural-network methods on FPGAs during the mentorship programme." },
-      { date: "2018", title: "Asian Science Camp", description: "Represented Sri Lanka at the Asian Science Camp in Indonesia." }
+      { date: "Jul–Aug 2021", title: "JENNIFER2 summer school and mentorship", description: "Participated in the virtual summer school and implemented neural-network methods on FPGAs during the mentorship programme with Professor Paolo Branchini, INFN Roma Tre." },
+      { date: "Aug 2018", title: "Asian Science Camp", description: "Selected to represent Sri Lanka at the Asian Science Camp in Manado, Indonesia." }
+    ]
+  },
+  {
+    title: "Leadership and service",
+    entries: [
+      { date: "May–Jul 2026", title: "Student–Staff Consultative Committee Representative", description: "RMIT University — represented Master of Data Science students in discussions with course coordinators and academic staff." },
+      { date: "Feb 2020–Aug 2021", title: "President, Physics Society", description: "University of Colombo — organised student discussions, guest lectures, and academic activities for physics undergraduates." }
     ]
   }
 ];
 
-const interests = [
-  "Scientific machine learning",
-  "High-energy physics",
-  "Climate modelling",
-  "Time-series forecasting",
-  "Energy analytics",
-  "Retrieval-augmented generation",
-  "NLP evaluation",
-  "Data visualisation"
-];
 ---
 <BaseLayout
   title="About — Eran Dodampe Gamage"
-  description="About Eran Dodampe Gamage, from physics training to data science, scientific machine learning, energy analytics, and climate modelling."
+  description="Eran Dodampe Gamage’s path from physics at the University of Colombo to data science at RMIT, with experience in research, teaching, and student leadership."
 >
   <section class="max-w-3xl space-y-5">
     <p class="eyebrow">About</p>
     <h1 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-5xl">
-      From physics to data systems.
+      From physics to data science.
     </h1>
     <p class="text-lg leading-8 text-[var(--muted)]">
-      My background is in physics, where I learned to think carefully about measurement, assumptions, uncertainty, and models. That way of thinking still shapes how I approach data science.
+      I studied physics at the University of Colombo and completed a Master of Data Science with Distinction at RMIT University. My background combines physics training with research in deep learning and language models.
     </p>
     <p class="leading-8 text-[var(--muted)]">
-      I completed a Master of Data Science with Distinction at RMIT University. During the programme, I worked on machine learning, retrieval-augmented systems, time-series modelling, and evaluation.
+      My undergraduate research used deep learning to study drought in Sri Lanka. I subsequently worked on neural-network implementation on FPGAs through the JENNIFER2 mentorship programme and supported physics laboratory classes and tutorials as a teaching assistant. At RMIT, my research focused on adapting language models under limited computing resources.
     </p>
-    <p class="leading-8 text-[var(--muted)]">
-      I’m especially interested in scientific machine learning and particle physics, with a focus on problems where conclusions are supported by clear baselines, careful validation, and results that can be inspected.
-    </p>
+    <a class="btn btn-ghost inline-flex" href="/cv/Eran-Dodampe-Gamage-CV.pdf">Academic CV (PDF)</a>
   </section>
 
   {backgroundGroups.map((group) => (
@@ -70,13 +65,12 @@ const interests = [
     </section>
   ))}
 
-  <section>
+  <section class="max-w-3xl space-y-5">
     <div class="max-w-3xl space-y-4">
-      <p class="eyebrow">Interests</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">Interests</h2>
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">Research interests</h2>
     </div>
-    <div class="mt-6">
-      <TagList tags={interests} />
-    </div>
+    <p class="leading-8 text-[var(--muted)]">
+      I would like to explore machine-learning methods for particle-physics simulation, particularly how they can reduce computing cost while preserving accuracy. Efficient model adaptation and scientific computing are the main directions I hope to develop through doctoral research.
+    </p>
   </section>
 </BaseLayout>

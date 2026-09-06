@@ -1,0 +1,197 @@
+% Compile with LuaLaTeX (recommended) or pdfLaTeX.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,left=1.85cm,right=1.85cm,top=1.55cm,bottom=1.55cm]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{libertinus}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \setmainfont{Libertinus Serif}
+  \setsansfont{Libertinus Sans}
+\fi
+\usepackage{xcolor,tabularx,array,hyperref}
+\definecolor{ink}{HTML}{20252B}
+\definecolor{accent}{HTML}{1F5361}
+\definecolor{muted}{HTML}{66717A}
+\definecolor{hairline}{HTML}{D7DDE0}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,
+  pdfauthor={Eran Dodampe Gamage},
+  pdftitle={Academic CV - Eran Dodampe Gamage}}
+\urlstyle{same}
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\color{ink}
+\raggedright
+
+\newcommand{\contactsep}{\hspace{0.55em}\textcolor{hairline}{\textbullet}\hspace{0.55em}}
+\newcommand{\cvsection}[1]{%
+  \par\vspace{0.78em}%
+  {\sffamily\bfseries\color{accent}\fontsize{11.3}{13.2}\selectfont #1}\par
+  \vspace{0.3em}}
+\newcommand{\cventry}[3]{%
+  \par\noindent
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    >{\raggedleft\arraybackslash\sffamily\leavevmode\color{accent}}p{3.25cm}@{}}
+    \textbf{#1} & {\small #2}
+  \end{tabularx}\par\vspace{-0.08em}%
+  {\small\sffamily\color{muted}#3}\par\vspace{0.12em}}
+\newenvironment{cvitems}{%
+  \begin{list}{\textcolor{accent}{\raisebox{0.15ex}{\scriptsize\textbullet}}}{%
+    \setlength{\leftmargin}{1.18em}\setlength{\labelsep}{0.42em}%
+    \setlength{\itemsep}{1.4pt}\setlength{\topsep}{2.2pt}%
+    \setlength{\parsep}{0pt}\setlength{\partopsep}{0pt}}%
+}{\end{list}}
+\newcommand{\skillrow}[2]{%
+  \par\noindent
+  \begin{tabularx}{\textwidth}{@{}
+    >{\raggedright\arraybackslash\sffamily\bfseries\leavevmode\color{accent}}p{3.65cm}
+    >{\raggedright\arraybackslash}X@{}}
+    #1 & #2
+  \end{tabularx}\par\vspace{0.1em}}
+
+\begin{document}
+\fontsize{10.15}{12.55}\selectfont
+
+{\sffamily\bfseries\fontsize{25}{28}\selectfont Eran Dodampe Gamage}\par
+\vspace{0.16em}
+{\sffamily\color{accent}\fontsize{10.2}{12}\selectfont
+Physics\contactsep Data Science\contactsep Scientific Machine Learning}\par
+\vspace{0.32em}
+{\small\sffamily\color{muted}
+Melbourne, Australia\contactsep
+\href{mailto:erangamage@gmail.com}{erangamage@gmail.com}}\par
+\vspace{0.16em}
+{\small\sffamily
+\href{https://erankawinda.github.io/}{Portfolio: erankawinda.github.io}\contactsep
+\href{https://github.com/erankawinda}{GitHub}\contactsep
+\href{https://www.linkedin.com/in/eran-gamage/}{LinkedIn}}\par
+\vspace{0.55em}
+{\color{hairline}\hrule height 0.55pt}
+
+\cvsection{Research Profile}
+Physics-trained data scientist with a Master of Data Science with Distinction
+from RMIT University. Research experience in efficient language-model adaptation,
+time-series forecasting, and model evaluation. Interested in applying machine
+learning to high-energy physics simulation and scientific computing.
+
+\cvsection{Education}
+\cventry{Master of Data Science with Distinction}{2024--2026}
+  {RMIT University\contactsep Melbourne, Australia}
+\begin{cvitems}
+  \item Degree conferred in July 2026.
+  \item Relevant coursework: Computational Machine Learning; Big Data Processing;
+  Algorithms and Analysis; Computing Research and Project Preparation.
+\end{cvitems}
+\cventry{Bachelor of Science Honours in Physics}{2017--2021}
+  {University of Colombo\contactsep Colombo, Sri Lanka}
+\begin{cvitems}
+  \item 120-credit honours degree covering physics, applied and pure mathematics,
+  and computer science.
+  \item Selected coursework: Nuclear and Particle Physics; Methods in Computational
+  Physics; Quantum Mechanics; Statistical Physics; Numerical Analysis;
+  Fundamentals of Programming.
+\end{cvitems}
+
+\cvsection{Research Experience}
+\cventry{Master's research: Efficient language-model adaptation}{2025--2026}
+  {RMIT University\contactsep Supervisor: Associate Professor Ke Deng}
+\begin{cvitems}
+  \item Investigated fine-tuning an 8B language model to generate advertising
+  headlines and descriptions from URL text alone, using teacher-generated examples.
+  \item Implemented a Python/PyTorch workflow comparing LoRA, QLoRA, reduced-rank,
+  and adaptive low-rank methods on shared data splits grouped by URL.
+  \item Evaluated teacher-text matching, output completeness, adapter cost, and GPU
+  memory; used shuffled-target controls and bootstrap analysis over held-out URLs.
+  \item Observed stronger matching to teacher examples than shuffled-target controls
+  in the exploratory experiment; assessed generation completeness separately.
+\end{cvitems}
+
+
+\cventry{Deep Learning for Meteorological Drought Prediction}{Mar 2020--Mar 2021}
+  {University of Colombo\contactsep Supervisor: Dr Siyath Gunawardene}
+\begin{cvitems}
+  \item Developed a multivariate stacked LSTM model for drought-index prediction
+  from gridded meteorological data in undergraduate honours research.
+  \item Prepared features and sequences, trained and evaluated models, and documented
+  the study. Presented the work at ICMAS 2021.
+  \item Subsequently rebuilt a three-location historical benchmark with chronological
+  evaluation, persistence baselines, and saved predictions;
+  \href{https://github.com/erankawinda/spei-drought-prediction}{code and results}.
+\end{cvitems}
+
+\cvsection{Relevant Research Training}
+\cventry{JENNIFER2 Summer Mentorship Programme}{Aug 2021}
+  {Mentor: Professor Paolo Branchini\contactsep INFN Roma Tre\contactsep Virtual}
+\begin{cvitems}
+  \item Implemented neural-network methods on FPGAs during the mentorship programme.
+\end{cvitems}
+
+\newpage
+\cvsection{Selected Computational Projects}
+\cventry{Australian electricity demand forecasting}{}
+  {Independent project\contactsep
+  \href{https://github.com/erankawinda/nem-demand-forecasting-australia}{Repository}}
+\begin{cvitems}
+  \item Built a measured half-hour demand pipeline for Australia's National Electricity
+  Market; compared random forest and XGBoost with three baselines in a historical
+  pilot using chronological evaluation.
+\end{cvitems}
+\cventry{Investor Assistant: Retrieval-Augmented Generation Evaluation}{}
+  {RMIT team project\contactsep
+  \href{https://github.com/rmit-ds-investor-assistant/WIL_RAG/tree/main/rag_eval}{Evaluation contribution}}
+\begin{cvitems}
+  \item Authored evaluation code, summaries, and plots comparing retrieval depths
+  of 1, 3, and 5 documents using ROUGE-Lsum and Sentence-BERT similarity;
+  reported refusal indicators by question cohort.
+\end{cvitems}
+
+\cvsection{Teaching Experience}
+\cventry{Temporary Teaching Assistant}{Jun 2021--Apr 2022}
+  {Department of Physics, University of Colombo\contactsep Colombo, Sri Lanka}
+\begin{cvitems}
+  \item Supported General Physics laboratory classes, assessments, and
+  remote-practical materials during COVID-19 teaching.
+  \item Assisted undergraduate laboratory work and tutorials in Nuclear and
+  Particle Physics.
+  \item Attended CMS/GEM technical briefings with the university's particle physics team.
+\end{cvitems}
+
+\cvsection{Selected Presentations and Academic Training}
+\cventry{International Conference on Multidisciplinary Approaches in Sciences}{Nov 2021}
+  {Presented undergraduate drought-prediction research\contactsep University of Colombo}
+\cventry{JENNIFER2 Summer School}{Jul 2021}
+  {Japan and Europe Network for Neutrino and Intensity Frontier Experimental Research 2\contactsep Virtual}
+\cventry{Asian Science Camp}{Aug 2018}
+  {Selected participant representing Sri Lanka\contactsep Indonesia}
+
+\cvsection{Technical Skills}
+\skillrow{Programming}{Python; C; SQL; MATLAB/Octave; R; VHDL; LaTeX.}
+\skillrow{Machine learning}{PyTorch; CNNs; RNNs/LSTMs; transformer fine-tuning;
+  supervised learning; statistical modelling.}
+\skillrow{Research computing}{NumPy; pandas; GPU/CUDA workflows; numerical modelling;
+  model evaluation; data visualisation; Git.}
+
+\cvsection{Leadership and Service}
+\cventry{Student--Staff Consultative Committee Representative}{May--Jul 2026}
+  {Master of Data Science, RMIT University\contactsep Melbourne, Australia}
+\begin{cvitems}
+  \item Represented students in communication with course coordinators and academic staff.
+\end{cvitems}
+\cventry{President, Physics Society}{Feb 2020--Aug 2021}
+  {University of Colombo\contactsep Colombo, Sri Lanka}
+\begin{cvitems}
+  \item Organised student discussions, guest lectures, and academic activities
+  for physics undergraduates.
+\end{cvitems}
+
+\cvsection{Languages}
+English\contactsep Sinhala\contactsep Japanese
+
+
+\end{document}

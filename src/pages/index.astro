@@ -4,31 +4,16 @@ import { projects } from "../data/projects";
 
 const directions = [
   {
-    title: "Scientific machine learning",
-    text: "Machine-learning methods for data-rich scientific problems, with particular interest in simulation and analysis in particle physics."
+    title: "Particle physics and simulation",
+    text: "I’m interested in how machine learning can make scientific simulations more efficient while preserving their accuracy."
   },
   {
     title: "Climate and energy forecasting",
-    text: "Clear data provenance, time-aware validation, and baseline comparisons for environmental and electricity-demand data."
+    text: "My forecasting projects explore drought in Sri Lanka and electricity demand in Australia."
   },
   {
-    title: "Language models and retrieval",
-    text: "Efficient model tuning, structured text generation, and retrieval systems with clear evaluation methods."
-  }
-];
-
-const principles = [
-  {
-    title: "Start from the system",
-    text: "I start with the question, the data source, and the assumptions before choosing a model."
-  },
-  {
-    title: "Make evaluation visible",
-    text: "I compare methods with simple baselines and use evaluation designs that fit the data."
-  },
-  {
-    title: "Keep the implementation legible",
-    text: "I document the method, results, and practical scope so others can understand and reproduce the work."
+    title: "Efficient machine learning",
+    text: "My master’s research explored adapting language models for structured text generation with limited GPU memory."
   }
 ];
 
@@ -47,13 +32,14 @@ const selectedWork = projects.filter((project) => project.featured);
           Data science shaped by a background in physics.
         </h1>
         <p class="max-w-3xl text-lg leading-8 text-[var(--muted)]">
-          I’m Eran Dodampe Gamage, a data scientist with a background in physics. I completed a Master of Data Science with Distinction at RMIT University. I’m interested in scientific machine learning and in methods that can be tested, explained, and improved.
+          I’m Eran Dodampe Gamage. I completed a Master of Data Science with Distinction at RMIT University, following an honours degree in physics at the University of Colombo. I’m working towards research that brings machine learning and physics together.
         </p>
       </div>
 
       <div class="flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/projects">Explore my work</a>
         <a class="btn btn-ghost" href="/about">About me</a>
+        <a class="btn btn-ghost" href="/cv/Eran-Dodampe-Gamage-CV.pdf">Academic CV (PDF)</a>
       </div>
     </div>
 
@@ -72,42 +58,36 @@ const selectedWork = projects.filter((project) => project.featured);
 
   <section>
     <div class="max-w-3xl space-y-4">
-      <p class="eyebrow">Working style</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">
-        How I approach technical work
-      </h2>
-    </div>
-
-    <div class="mt-8 grid gap-5 md:grid-cols-3">
-      {principles.map((principle) => (
-        <article class="border-t border-[var(--border-soft)] py-5">
-          <h3 class="text-xl font-semibold text-[var(--text)]">{principle.title}</h3>
-          <p class="mt-3 leading-7 text-[var(--muted)]">{principle.text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <div class="max-w-3xl space-y-4">
-      <p class="eyebrow">Selected work</p>
       <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">
         Selected work
       </h2>
       <p class="text-lg leading-8 text-[var(--muted)]">
-        Research in language-model tuning, climate and energy forecasting, and retrieval evaluation.
+        Projects in language-model adaptation, environmental forecasting, and retrieval systems.
       </p>
     </div>
 
     <div class="mt-8 divide-y divide-[var(--border-soft)] border-y border-[var(--border-soft)]">
       {selectedWork.map((item) => (
         <article class="grid gap-3 py-6 md:grid-cols-[0.35fr_0.65fr]">
-          <h3 class="text-xl font-semibold text-[var(--text)]"><a class="hover:text-[var(--accent)]" href={`/projects/#${item.id}`}>{item.title}</a></h3>
+          <h3 class="text-xl font-semibold text-[var(--text)]"><a class="hover:text-[var(--accent)]" href={item.caseStudyHref ?? `/projects/#${item.id}`}>{item.title}</a></h3>
           <p class="leading-7 text-[var(--muted)]">{item.summary}</p>
         </article>
       ))}
     </div>
     <a class="link mt-6 inline-flex text-sm font-medium" href="/projects">Explore all projects</a>
+  </section>
+
+  <section class="max-w-3xl space-y-5">
+    <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">
+      Teaching and student leadership
+    </h2>
+    <p class="text-lg leading-8 text-[var(--muted)]">
+      At the University of Colombo, I supported physics laboratory classes and tutorials. As President of the Physics Society, I organised student discussions, guest lectures, and academic activities for physics undergraduates.
+    </p>
+    <p class="leading-8 text-[var(--muted)]">
+      At RMIT, I represented Master of Data Science students on the Student–Staff Consultative Committee.
+    </p>
+    <a class="link inline-flex text-sm font-medium" href="/about">More about my background</a>
   </section>
 
   <section class="grid gap-5 border border-[var(--border-soft)] p-6 md:grid-cols-[0.7fr_0.3fr] md:items-center">
