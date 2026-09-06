@@ -4,8 +4,8 @@ import "../styles/global.css";
 const frontmatter = Astro.props.frontmatter ?? {};
 
 const {
-  title = frontmatter.title ?? "Eran Gamage — Physics & Data Science",
-  description = frontmatter.description ?? "Portfolio of Eran Gamage, a data scientist with a background in physics and interests in scientific machine learning."
+  title = frontmatter.title ?? "Eran Dodampe Gamage — Physics & Data Science",
+  description = frontmatter.description ?? "Portfolio of Eran Dodampe Gamage, a data scientist with a background in physics and interests in scientific machine learning."
 } = Astro.props;
 
 const navItems = [
@@ -27,7 +27,7 @@ const canonicalURL = new URL(pathname === "/" ? "/" : `${pathname}/`, Astro.site
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Eran Gamage" />
+    <meta property="og:site_name" content="Eran Dodampe Gamage" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
@@ -46,9 +46,9 @@ const canonicalURL = new URL(pathname === "/" ? "/" : `${pathname}/`, Astro.site
     <div class="site-shell">
       <header class="site-header">
         <div class="container-nice flex min-h-16 items-center justify-between gap-4 py-3">
-          <a href="/" class="brand" aria-label="Eran Gamage home">
-            <span class="brand-mark mono">EG</span>
-            <span>Eran Gamage</span>
+          <a href="/" class="brand" aria-label="Eran Dodampe Gamage home">
+            <span class="brand-mark mono" aria-hidden="true">EDG</span>
+            <span>Eran Dodampe Gamage</span>
           </a>
 
           <nav class="flex flex-wrap items-center justify-end gap-1" aria-label="Primary navigation">
@@ -70,7 +70,7 @@ const canonicalURL = new URL(pathname === "/" ? "/" : `${pathname}/`, Astro.site
 
       <footer class="container-nice site-footer py-8 text-sm">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Eran Gamage</p>
+          <p>© {new Date().getFullYear()} Eran Dodampe Gamage</p>
           <div class="flex flex-wrap gap-x-4 gap-y-2">
             <a class="footer-link" href="mailto:erangamage@gmail.com">Email</a>
             <a class="footer-link" href="https://github.com/erankawinda" target="_blank" rel="noreferrer">GitHub</a>

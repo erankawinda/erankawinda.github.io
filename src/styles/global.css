@@ -76,7 +76,7 @@ a {
 }
 
 .brand-mark {
-  @apply inline-flex h-8 w-8 items-center justify-center rounded-sm text-xs font-medium;
+  @apply inline-flex h-8 w-10 shrink-0 items-center justify-center rounded-sm text-xs font-medium;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.025);
   color: var(--accent);
