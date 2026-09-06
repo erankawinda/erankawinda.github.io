@@ -45,7 +45,8 @@ export const projects: Project[] = [
     details: [
       "The historical undergraduate study explored multivariate recurrent neural networks, including stacked LSTM architectures, and was presented at ICMAS 2021.",
       "The current benchmark uses hash-bound inputs, nested rolling-origin evaluation, persistence baselines, and paired block-bootstrap uncertainty.",
-      "On the common 2000–2019 retrospective panel, SPEI-3 MAE was 0.542 vs 0.638 persistence and SPEI-6 was 0.336 vs 0.440; SPEI-3 drought-event F1 did not improve (0.527 vs 0.561), and no operational or external-validation claim is made."
+      "On the common 2000–2019 panel, ridge_ar24 reduced SPEI-3 MAE to 0.542 from 0.638 persistence (95% paired-reduction interval [0.054, 0.137]); ridge_ar24_met24 reduced SPEI-6 MAE to 0.336 from 0.440 ([0.076, 0.131]).",
+      "Drought-event F1 was 0.527 vs 0.561 at SPEI-3 and 0.754 vs 0.688 at SPEI-6. These are internal retrospective results, not operational or external validation."
     ],
     tags: ["SPEI", "LSTM", "Time series", "Leakage-aware evaluation", "Sri Lanka"],
     status: "Historical study and reproducibility benchmark",
