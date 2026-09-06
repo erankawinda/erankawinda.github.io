@@ -3,56 +3,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TagList from "../components/TagList.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 
-const timeline = [
+const backgroundGroups = [
   {
-    date: "2024–2026",
-    title: "Master of Data Science",
-    description: "RMIT University — completed with Distinction."
+    title: "Education",
+    entries: [
+      { date: "2024–2026", title: "Master of Data Science", description: "RMIT University — completed with Distinction." },
+      { date: "2017–2021", title: "BSc Honours in Physics", description: "University of Colombo — physics, with foundations in mathematics and computer science." }
+    ]
   },
   {
-    date: "2017–2021",
-    title: "BSc Honours in Physics",
-    description: "University of Colombo — Studied physics with supporting foundations in mathematics and computer science."
+    title: "Research and teaching",
+    entries: [
+      { date: "2021–2022", title: "Teaching Assistant", description: "University of Colombo — supported physics teaching and laboratory coursework, including course materials and student assessment." },
+      { date: "2021–2022", title: "CMS/GEM research exposure", description: "Attended technical briefings with the University of Colombo particle physics team." },
+      { date: "2021", title: "Undergraduate drought research", description: "University of Colombo — studied recurrent neural networks for drought prediction in Sri Lanka." }
+    ]
   },
   {
-    date: "2021–2022",
-    title: "Teaching Assistant",
-    description: "University of Colombo — Supported physics teaching and laboratory coursework, including course-material development and student assessment."
-  },
-  {
-    date: "2021",
-    title: "Drought prediction research",
-    description: "University of Colombo — Worked on deep-learning methods for drought prediction in Sri Lanka using recurrent neural network approaches."
-  },
-  {
-    date: "2021",
-    title: "JENNIFER2 mentorship and summer school",
-    description: "Implemented neural-network methods on FPGAs during the mentorship program."
-  },
-  {
-    date: "2021–2022",
-    title: "CMS/GEM research exposure",
-    description: "Attended technical briefings with the University of Colombo particle physics team."
-  },
-  {
-    date: "2018",
-    title: "Asian Science Camp",
-    description: "Represented Sri Lanka at the Asian Science Camp in Indonesia."
-  }
-];
-
-const workingStyle = [
-  {
-    title: "Careful with assumptions",
-    text: "I prefer to make data limitations, modelling choices, and evaluation gaps explicit."
-  },
-  {
-    title: "Readable technical work",
-    text: "Code, documentation, and results should be understandable after the initial excitement fades."
-  },
-  {
-    title: "Research connected to use",
-    text: "I like research questions that connect careful methods with real scientific data, whether in physics, climate, or energy systems."
+    title: "Scientific programmes",
+    entries: [
+      { date: "2021", title: "JENNIFER2 mentorship and summer school", description: "Implemented neural-network methods on FPGAs during the mentorship programme." },
+      { date: "2018", title: "Asian Science Camp", description: "Represented Sri Lanka at the Asian Science Camp in Indonesia." }
+    ]
   }
 ];
 
@@ -64,7 +36,7 @@ const interests = [
   "Energy analytics",
   "Retrieval-augmented generation",
   "NLP evaluation",
-  "Data visualization"
+  "Data visualisation"
 ];
 ---
 <BaseLayout
@@ -80,39 +52,23 @@ const interests = [
       My background is in physics, where I learned to think carefully about measurement, assumptions, uncertainty, and models. That way of thinking still shapes how I approach data science.
     </p>
     <p class="leading-8 text-[var(--muted)]">
-      I completed a Master of Data Science with Distinction at RMIT University. During the program, I worked on machine learning, retrieval-augmented systems, time-series modelling, and evaluation.
+      I completed a Master of Data Science with Distinction at RMIT University. During the programme, I worked on machine learning, retrieval-augmented systems, time-series modelling, and evaluation.
     </p>
     <p class="leading-8 text-[var(--muted)]">
       I’m especially interested in scientific machine learning and particle physics, with a focus on problems where conclusions are supported by clear baselines, careful validation, and results that can be inspected.
     </p>
   </section>
 
-  <section>
-    <div class="max-w-3xl space-y-4">
-      <p class="eyebrow">Background</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">Background</h2>
-    </div>
-    <div class="mt-6">
-      {timeline.map((item) => (
-        <TimelineItem date={item.date} title={item.title} description={item.description} />
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <div class="max-w-3xl space-y-4">
-      <p class="eyebrow">Working style</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">How I like to work</h2>
-    </div>
-    <div class="mt-8 grid gap-5 md:grid-cols-3">
-      {workingStyle.map((item) => (
-        <article class="border-t border-[var(--border-soft)] py-5">
-          <h3 class="text-xl font-semibold text-[var(--text)]">{item.title}</h3>
-          <p class="mt-3 leading-7 text-[var(--muted)]">{item.text}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+  {backgroundGroups.map((group) => (
+    <section>
+      <h2 class="text-2xl font-semibold tracking-tight text-[var(--text)] md:text-3xl">{group.title}</h2>
+      <div class="mt-6">
+        {group.entries.map((item) => (
+          <TimelineItem date={item.date} title={item.title} description={item.description} />
+        ))}
+      </div>
+    </section>
+  ))}
 
   <section>
     <div class="max-w-3xl space-y-4">

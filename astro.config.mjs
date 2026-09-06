@@ -5,5 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://erankawinda.github.io",
+  redirects: {
+    "/blog": "/projects/",
+    "/blog/hello": "/projects/"
+  },
   vite: { plugins: [tailwindcss()] }
 });
