@@ -1,6 +1,6 @@
 # erankawinda.github.io
 
-Personal research portfolio for Eran Gamage.
+Personal research portfolio for Eran Dodampe Gamage.
 
 Built with Astro 7 and Tailwind CSS 4 for deployment on GitHub Pages.
 
