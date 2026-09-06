@@ -27,17 +27,17 @@ export const projects: Project[] = [
     linkLabel: "View the repository"
   },
   {
-    title: "Australian NEM forecasting code",
+    title: "Australian electricity demand forecasting",
     category: "Forecasting and energy systems",
-    summary: "A forecasting-code demonstration for Australian electricity-market records, with chronological evaluation and automated data checks.",
+    summary: "Predicts measured operational demand for the next half hour across Australia's National Electricity Market (NEM), using public AEMO data.",
     details: [
-      "Data preparation checks the five-minute time grid, requires all six readings per regional half-hour, and keeps only intervals covering all five NEM regions.",
+      "Reads original half-hour measurements, validates timestamps and source records, and requires all five regions before calculating the NEM total.",
       "Compares XGBoost and random forest with persistence, previous-day, and previous-week baselines using training, validation, and test periods in time order.",
-      "Includes pinned dependencies, interval-alignment tests with synthetic data, and run records for the input hash, software, and evaluation split.",
-      "The source field's meaning and release timing must be established for any chosen dataset. Synthetic tests do not establish real-data forecast accuracy or measured operational-demand performance."
+      "The October–December 2024 pilot includes saved predictions, error metrics, source hashes, model settings, and automated checks against future-data leakage.",
+      "Uses successive one-step historical forecasts, with archived observations assumed available at each interval's end."
     ],
     tags: ["Energy data", "Forecasting", "Time series", "XGBoost", "Python"],
-    status: "Forecasting-code demonstration",
+    status: "Measured-demand historical benchmark",
     link: "https://github.com/erankawinda/nem-demand-forecasting-australia",
     linkLabel: "View the repository"
   },
