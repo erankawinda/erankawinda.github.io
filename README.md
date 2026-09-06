@@ -8,12 +8,12 @@ Built with Astro 5 and Tailwind CSS 4 for deployment on GitHub Pages.
 
 The site presents selected work across:
 
+- scientific machine learning interests
+- particle-physics research interests
 - retrieval-augmented generation
-- NLP and retrieval evaluation
+- machine-learning and retrieval evaluation
 - Australian energy-grid analytics
-- privacy-aware retrieval systems
 - climate and drought modelling
-- physics-informed data science interests
 
 ## Tech stack
 

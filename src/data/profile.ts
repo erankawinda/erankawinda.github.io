@@ -4,39 +4,39 @@ export const profile = {
   email: "erangamage@gmail.com",
   linkedin: "https://www.linkedin.com/in/eran-gamage/",
   github: "https://github.com/erankawinda",
-  title: "Physics-trained data science researcher and master's student",
+  title: "Data scientist with a background in physics",
   coreMessage:
-    "I work at the intersection of physics, data science, and applied AI — building systems that retrieve, model, and explain information with care.",
+    "I use data science and machine learning to study scientific and technical problems, with particular interest in particle physics, climate, and energy systems.",
   positioning:
-    "My work is research-minded and grounded in evidence: retrieval-augmented workflows, NLP evaluation, energy-grid analytics, privacy-aware data access, and climate modelling.",
+    "My background combines physics and data science, and my work has included time-series modelling, retrieval-augmented systems, energy-data analysis, and careful model evaluation.",
   shortBackground:
-    "Master's in Data Science at RMIT University, 2024–2026, with a Bachelor of Science Honours in Physics from the University of Colombo.",
+    "Master of Data Science with Distinction from RMIT University, following a Bachelor of Science Honours in Physics from the University of Colombo.",
   contactMessage:
-    "I’m open to thoughtful conversations about research, data science, retrieval, evaluation, energy-grid analytics, climate modelling, and privacy-aware data access.",
+    "I’m open to thoughtful conversations about scientific machine learning, data science, particle physics, climate modelling, and careful evaluation.",
   focusAreas: [
     {
-      title: "Retrieval and evaluation",
-      description: "Grounded answers, source use, NLP evaluation, and visible failure modes."
+      title: "Scientific machine learning",
+      description: "Machine-learning methods for scientific problems, with a growing interest in particle-physics simulation and analysis."
     },
     {
       title: "Forecasting physical systems",
       description: "Time-series modelling for energy-grid and climate data, with attention to constraints and uncertainty."
     },
     {
-      title: "Privacy-aware data access",
-      description: "Retrieval methods shaped by privacy constraints, verification cost, and usable system design."
+      title: "Retrieval and evaluation",
+      description: "Grounded answers, source use, NLP evaluation, and visible failure modes."
     }
   ],
   narrative: [
-    "I’m a Master’s in Data Science student at RMIT University, 2024–2026, with a Bachelor of Science Honours in Physics from the University of Colombo.",
-    "My work sits across retrieval-augmented workflows, NLP evaluation, Australian energy-grid analytics, privacy-aware data access, and climate modelling.",
-    "I’m still learning and growing, with a focus on reproducible work, careful evaluation, and claims that can be checked."
+    "I recently completed a Master of Data Science with Distinction at RMIT University, following a Bachelor of Science Honours in Physics from the University of Colombo.",
+    "During my studies, I worked on time-series modelling, retrieval-augmented systems, Australian energy data, and machine-learning evaluation.",
+    "I am especially interested in scientific machine learning and in research where results must be tested against clear baselines and reported with appropriate limits."
   ],
   timeline: [
     {
       date: "2024–2026",
-      title: "Master’s in Data Science",
-      description: "RMIT University."
+      title: "Master of Data Science",
+      description: "RMIT University — completed with Distinction."
     },
     {
       date: "Physics background",
@@ -56,7 +56,7 @@ export const profile = {
     {
       date: "Research exposure",
       title: "Scientific training and mentorship",
-      description: "CERN UOC CMS/GEM detector work, JENNIFER2 Summer School mentorship, and Asian Science Camp."
+      description: "CMS/GEM research exposure with the University of Colombo particle physics team, JENNIFER2 mentorship, and the Asian Science Camp."
     }
   ],
   technicalInterests: [
@@ -64,11 +64,12 @@ export const profile = {
     "SQL",
     "Machine learning",
     "Deep learning",
+    "Scientific machine learning",
+    "High-energy physics",
     "Time series",
     "Retrieval systems",
     "Evaluation",
-    "Energy analytics",
-    "Privacy-aware retrieval"
+    "Energy analytics"
   ],
   values: [
     {
